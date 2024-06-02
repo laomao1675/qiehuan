@@ -13,7 +13,7 @@ function showSlides() {
 }
 
 function goToStartPage() {
-    window.location.href = "/start/"; // 跳转到开始页面
+    window.location.href = "start.html"; // 跳转到开始页面
 }
 
 // 处理用户活动检测和返回逻辑
