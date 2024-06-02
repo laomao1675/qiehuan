@@ -1,26 +1,31 @@
-html, body {
+body, html {
     height: 100%;
     margin: 0;
-    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
 }
 
-#slideshow {
+.slideshow-container {
     position: relative;
+    max-width: 100%;
     height: 100%;
-    width: 100%;
 }
 
-.slide {
+.mySlides {
+    display: none;
     position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    opacity: 0;
-    transition: opacity 1s;
 }
 
-.slide.active {
-    opacity: 1;
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
 }
