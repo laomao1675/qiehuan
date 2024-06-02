@@ -9,8 +9,6 @@ function resetTimer() {
 
 function setupActivityListeners() {
     window.onload = resetTimer;
-    window.onmousemove = resetTimer;
-    window.onmousedown = resetTimer;
     window.ontouchstart = resetTimer;
     window.onclick = resetTimer;
     window.onkeypress = resetTimer;
