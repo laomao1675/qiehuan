@@ -1,13 +1,13 @@
-let slideIndex = 0;
-showSlides();
+let currentIndex = 0;
+const slides = document.querySelectorAll('.slide');
 
-function showSlides() {
-    let slides = document.getElementsByClassName("mySlides");
-    for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";  
-    }
-    slideIndex++;
-    if (slideIndex > slides.length) {slideIndex = 1}    
-    slides[slideIndex-1].style.display = "block";  
-    setTimeout(showSlides, 5000); // 5秒切换
+function showNextSlide() {
+    slides[currentIndex].classList.remove('active');
+    currentIndex = (currentIndex + 1) % slides.length;
+    slides[currentIndex].classList.add('active');
 }
+
+setInterval(showNextSlide, 5000);
+
+// 初始显示第一张图片
+slides[currentIndex].classList.add('active');
