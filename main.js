@@ -1,17 +1,13 @@
-let timer;
+let currentIndex = 0;
+const slides = document.querySelectorAll('.slide');
 
-function resetTimer() {
-    clearTimeout(timer);
-    timer = setTimeout(() => {
-        window.location.href = "index.html"; // 返回到全屏图片切换页面
-    }, 120000); // 2分钟无操作
+function showNextSlide() {
+    slides[currentIndex].classList.remove('active');
+    currentIndex = (currentIndex + 1) % slides.length;
+    slides[currentIndex].classList.add('active');
 }
 
-function setupActivityListeners() {
-    window.onload = resetTimer;
-    window.ontouchstart = resetTimer;
-    window.onclick = resetTimer;
-    window.onkeypress = resetTimer;
-}
+setInterval(showNextSlide, 5000);
 
-setupActivityListeners();
+// 初始显示第一张图片
+slides[currentIndex].classList.add('active');
