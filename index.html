@@ -3,10 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>全屏图片切换</title>
     <link rel="stylesheet" href="styles.css">
+     <style>
+        .custom-tooltip {
+            position: relative;
+            display: inline-block;
+        }
+
+        .custom-tooltip .tooltip-text {
+            visibility: hidden;
+            width: 120px;
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            border-radius: 5px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%; 
+            left: 50%;
+            margin-left: -60px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .custom-tooltip:hover .tooltip-text {
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
 </head>
 <body>
+        <div class="custom-tooltip">
         <div id="slideshow">
         <a href="start.html"><img src="https://laomaolm.vercel.app/server/images/server/1.jpg" class="slide" alt="Image 1">
         <a href="start.html"><img src="https://laomaolm.vercel.app/server/images/server/2.jpg" class="slide" alt="Image 2">
